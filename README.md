@@ -1,12 +1,16 @@
-# 🏥 PharmaGuard - Pharmacogenomic Risk Prediction System (RIFT2026)
+#  PharmaGuard - Pharmacogenomic Risk Prediction System (RIFT2026)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/downloads/)
-[![Node 16+](https://img.shields.io/badge/Node-16%2B-green)](https://nodejs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-18.2%2B-61DAFB?logo=react)](https://react.dev/)
 
-## 📋 Table of Contents
+## Live Demo & Video
+
+- **Live Website:** https://pharmaguardrift2026.netlify.app/  
+- **Sample Video (Google Drive):** _link to be added here_
+
+
+##  Table of Contents
 
 1. [Project Overview](#project-overview)
 2. [Features](#features)
@@ -19,31 +23,27 @@
 9. [Technology Stack](#technology-stack)
 10. [Project Structure](#project-structure)
 11. [Development Guide](#development-guide)
-12. [Deployment](#deployment)
-    - [Frontend Deployment (Netlify)](#frontend-deployment-netlify)
-    - [Backend Deployment Options](#backend-deployment-options)
-    - [Full-Stack Deployment](#full-stack-deployment)
-13. [Troubleshooting](#troubleshooting)
-14. [Contributing](#contributing)
-15. [Documentation](#documentation)
-16. [License](#license)
+12. [Troubleshooting](#troubleshooting)
+13. [Contributing](#contributing)
+14. [Documentation](#documentation)
+15. [License](#license)
 
 ---
 
-## 📖 Project Overview
+##  Project Overview
 
 **PharmaGuard** is a comprehensive web-based pharmacogenomic analysis platform that predicts drug safety risks based on patient genetic profiles. The system integrates genomic data (VCF files), drug information, and clinical history to provide evidence-based risk assessments, drug interaction detection, and AI-generated clinical recommendations.
 
 ### Key Features:
 
-- 🧬 Genetic variant analysis from VCF files
-- 💊 Risk assessment for 6 commonly prescribed medications
-- 🔬 Pharmacogenomic phenotype calculation
-- 💉 Drug-drug interaction detection
-- 🤖 AI-powered clinical explanations (Google Gemini API)
-- 📊 Comprehensive data visualization and reporting
-- 📥 JSON export and data sharing capabilities
-- 📱 Responsive, modern web interface
+-  Genetic variant analysis from VCF files
+-  Risk assessment for 6 commonly prescribed medications
+-  Pharmacogenomic phenotype calculation
+-  Drug-drug interaction detection
+-  AI-powered clinical explanations (Google Gemini API)
+-  Comprehensive data visualization and reporting
+-  JSON export and data sharing capabilities
+-  Responsive, modern web interface
 
 ### Value Proposition:
 
@@ -54,50 +54,50 @@
 
 ---
 
-## ✨ Features
+##  Features
 
 ### Core Functionality
 
-✅ **VCF File Upload & Validation**
+ **VCF File Upload & Validation**
 
 - Drag & drop file upload
 - Format validation and error reporting
 - Support for files up to 50MB
 
-✅ **Drug Selection & Analysis**
+ **Drug Selection & Analysis**
 
 - 6 supported medications (Warfarin, Clopidogrel, Metoprolol, Simvastatin, Sertraline, Codeine)
 - Multi-select drug analyzer
 - Sample data for demonstration
 
-✅ **Pharmacogenomic Analysis**
+ **Pharmacogenomic Analysis**
 
 - Gene identification and variant detection
 - Phenotype mapping (PM, IM, NM, UM)
 - Star allele assignment
 - Metabolizer status calculation
 
-✅ **Risk Stratification**
+ **Risk Stratification**
 
 - 4-tier risk levels (LOW → MODERATE → HIGH → CRITICAL)
 - Risk percentage scoring (0-100%)
 - Severity classification
 - Evidence-based reasoning
 
-✅ **Clinical Decision Support**
+ **Clinical Decision Support**
 
 - Drug-drug interaction detection
 - Clinical risk modifiers based on patient history
 - Dosing recommendations
 - Alternative drug suggestions
 
-✅ **AI-Generated Explanations**
+ **AI-Generated Explanations**
 
 - Google Gemini API integration
 - Natural language variant interpretation
 - Patient-friendly clinical summaries
 
-✅ **Comprehensive Reporting**
+ **Comprehensive Reporting**
 
 - Summary dashboard with quick metrics
 - Gene analysis panel
@@ -105,7 +105,7 @@
 - Detailed drug-by-drug reports
 - Variant detection table
 
-✅ **Data Management**
+ **Data Management**
 
 - JSON export functionality
 - Copy-to-clipboard support
@@ -114,7 +114,7 @@
 
 ---
 
-## 📋 Prerequisites
+##  Prerequisites
 
 ### System Requirements
 
@@ -142,7 +142,7 @@
 
 ---
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### Step 1: Clone the Repository
 
@@ -263,7 +263,7 @@ python -c "from src.core.config import get_settings; s = get_settings(); print(f
 
 ---
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### Option 1: Development Mode (Recommended for First-Time Setup)
 
@@ -331,7 +331,7 @@ docker run -p 8000:8000 \
 
 ---
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Base URL
 
@@ -632,7 +632,7 @@ console.log(results);
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### System Architecture Diagram
 
@@ -711,7 +711,7 @@ console.log(results);
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 RIFT2026/
@@ -812,363 +812,7 @@ pip install --upgrade -r requirements.txt
 
 ---
 
-## � Deployment
-
-### Deployment Architecture Overview
-
-PharmaGuard is a full-stack application with:
-
-- **Frontend:** React/Vite (Static Site) → Deploy to Netlify ✅
-- **Backend:** FastAPI/Python (Server) → Deploy to alternatives (Railway, Render, Heroku, etc.)
-
-**⚠️ Important:** Netlify **cannot** directly host Python FastAPI servers. It only supports:
-
-- Static sites (HTML, CSS, JS)
-- Serverless functions (limited)
-- Node.js backends
-
----
-
-### Frontend Deployment (Netlify)
-
-#### Step 1: Deploy Frontend Only (Without Backend)
-
-If you want to deploy just the frontend to showcase the UI:
-
-**1.1 Build the Frontend**
-
-```bash
-cd frontend
-npm install
-npm run build
-```
-
-This creates an optimized build in `frontend/build/` directory.
-
-**1.2 Deploy to Netlify via CLI**
-
-```bash
-# Install Netlify CLI globally
-npm install -g netlify-cli
-
-# Login to Netlify
-netlify login
-
-# Deploy from the build directory
-cd build
-netlify deploy --prod
-```
-
-**1.3 Deploy to Netlify via GitHub (Recommended)**
-
-1. Push your code to GitHub:
-
-```bash
-git add .
-git commit -m "Deploy: prepare for Netlify"
-git push origin main
-```
-
-2. Go to [Netlify](https://app.netlify.com/)
-3. Click **"New site from Git"**
-4. Select **GitHub** and authorize
-5. Choose your **RIFT2026 repository**
-6. Configure build settings:
-   - **Base directory:** `frontend`
-   - **Build command:** `npm install && npm run build`
-   - **Publish directory:** `frontend/build`
-7. Set **Environment Variables:**
-   - Click **"Show advanced"** → **"New variable"**
-   - Add: `REACT_APP_API_URL=https://your-backend-url.com/api`
-8. Click **"Deploy site"**
-
-**1.4 Environment Configuration for Frontend**
-
-Create `frontend/.env.production`:
-
-```env
-VITE_API_URL=https://your-backend-url.com/api
-```
-
-Update `frontend/src/main.jsx` or relevant API call file:
-
-```javascript
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
-```
-
----
-
-### Backend Deployment Options
-
-Since FastAPI requires a Python server, here are the best alternatives:
-
-#### Option A: Railway (⭐ Recommended - Easiest)
-
-**Advantages:**
-
-- Easy GitHub integration
-- Auto-deploys on push
-- Free tier available ($5/month after)
-- Python support
-
-**Steps:**
-
-1. **Create Railway Account:**
-   - Go to [railway.app](https://railway.app/)
-   - Sign up with GitHub
-
-2. **Deploy Backend:**
-
-   ```bash
-   git push origin main
-   ```
-
-3. **Create `railway.toml` in project root:**
-
-```toml
-[build]
-builder = "dockerfile"
-
-[deploy]
-startCommand = "python -m uvicorn src.main:app --host 0.0.0.0 --port $PORT"
-```
-
-4. Create `Procfile` in project root:
-
-```
-web: python -m uvicorn src.main:app --host 0.0.0.0 --port $PORT
-```
-
-5. In Railway Dashboard:
-   - Connect your GitHub repo
-   - Set Environment Variables:
-     - `GEMINI_API_KEY=your-key`
-     - `CORS_ORIGINS=["https://your-netlify-url.netlify.app"]`
-   - Railway generates a URL (e.g., `https://project-production.up.railway.app`)
-
-6. Update frontend with backend URL:
-   - Go to Netlify → Site Settings → Build & Deploy
-   - Set `REACT_APP_API_URL=https://your-railway-url`
-   - Redeploy
-
----
-
-#### Option B: Render.com
-
-**Advantages:**
-
-- Free tier available
-- Easy GitHub integration
-- Auto-deploys
-
-**Steps:**
-
-1. Go to [render.com](https://render.com/)
-2. Click **"New +"** → **"Web Service"**
-3. Connect your GitHub repository
-4. Configure:
-   - **Name:** `pharmaguard-api`
-   - **Environment:** `Python 3.11`
-   - **Build command:** `pip install -r requirements.txt`
-   - **Start command:** `python -m uvicorn src.main:app --host 0.0.0.0`
-5. Set Environment Variables:
-   - `GEMINI_API_KEY=your-key`
-   - `CORS_ORIGINS=["https://your-site.netlify.app"]`
-6. Deploy and get your URL
-
----
-
-#### Option C: Heroku (Paid - No Longer Free)
-
-**If you have existing credits:**
-
-```bash
-# Install Heroku CLI
-npm install -g heroku
-
-# Login
-heroku login
-
-# Create app
-heroku create pharmaguard-api
-
-# Set environment variables
-heroku config:set GEMINI_API_KEY=your-key
-
-# Deploy
-git push heroku main
-```
-
----
-
-#### Option D: AWS Lambda + API Gateway
-
-**Technical but most scalable:**
-
-1. Use Zappa to deploy FastAPI to Lambda:
-
-```bash
-pip install zappa
-zappa init
-zappa deploy production
-```
-
-2. Get your API Gateway URL
-
----
-
-### Full-Stack Deployment (Complete Setup)
-
-#### Step 1: Deploy Frontend to Netlify
-
-Follow the "Deploy to Netlify via GitHub" section above.
-
-Get your Netlify URL: `https://your-site.netlify.app`
-
-#### Step 2: Deploy Backend to Railway/Render
-
-Choose Railway or Render and follow steps above.
-
-Get your Backend URL: `https://your-api-url.railway.app` or `https://your-api-url.onrender.com`
-
-#### Step 3: Connect Frontend & Backend
-
-**3.1 Update Frontend Environment:**
-
-In Netlify Dashboard:
-
-1. Go to **Site Settings** → **Build & Deploy** → **Environment**
-2. Add variable: `VITE_API_URL=https://your-api-url.railway.app/api`
-3. Trigger redeploy
-
-**3.2 Update Backend CORS:**
-
-In your backend deployment (Railway/Render):
-
-1. Set environment variable: `CORS_ORIGINS=["https://your-site.netlify.app"]`
-2. Redeploy
-
-**3.3 Test Connection:**
-
-```bash
-curl https://your-api-url.railway.app/api/health
-```
-
-Should return:
-
-```json
-{
-  "status": "ok",
-  "gemini_configured": true,
-  ...
-}
-```
-
-#### Step 4: Verify Full Application
-
-1. Open `https://your-site.netlify.app`
-2. Upload a VCF file
-3. Submit analysis
-4. Verify results display properly
-
----
-
-### Production Checklist
-
-- [ ] Frontend built and deployed to Netlify
-- [ ] Backend deployed to Railway/Render/Heroku
-- [ ] Environment variables set in both services
-- [ ] CORS properly configured
-- [ ] API health check passes
-- [ ] File upload works
-- [ ] Analysis completes successfully
-- [ ] Results display correctly
-- [ ] Export functionality works
-- [ ] Custom domain configured (optional)
-- [ ] SSL/HTTPS enabled (automatic on Netlify & Railway)
-- [ ] Monitoring/logging enabled
-
----
-
-### Post-Deployment Configuration
-
-#### Custom Domain (Netlify)
-
-1. Go to **Site Settings** → **Domain Management**
-2. Click **Add custom domain**
-3. Enter your domain
-4. Follow DNS instructions
-5. Wait 24-48 hours for DNS propagation
-
-#### Performance Monitoring
-
-Set up monitoring on both services:
-
-- Netlify: Analytics tab
-- Railway: Deployments dashboard
-- Use Google Analytics for frontend
-
-#### Logging
-
-**Frontend:** Use browser console + Netlify logs
-
-```
-Netlify Dashboard → Analytics
-```
-
-**Backend:** Check deployment logs
-
-```
-Railway: Logs tab
-Render: Logs section
-```
-
----
-
-### Cost Breakdown (Monthly)
-
-| Service           | Free Tier            | Paid Starting At         |
-| ----------------- | -------------------- | ------------------------ |
-| Netlify Frontend  | ✅ (100GB bandwidth) | $19/month                |
-| Railway Backend   | ✅ ($5 credit/month) | $5/month (pay-as-you-go) |
-| Render Backend    | ✅ (limited)         | $7/month                 |
-| Google Gemini API | Free tier available  | Varies by usage          |
-| **Total**         | **~$0-5/month**      | **~$24+/month**          |
-
----
-
-### Troubleshooting Deployments
-
-**Issue: "Failed to deploy frontend"**
-
-```bash
-# Ensure build directory is created
-cd frontend && npm run build
-# Check build output exists
-ls build/
-```
-
-**Issue: "Backend returns 503 Service Unavailable"**
-
-- Check deployment service status
-- Verify environment variables are set
-- Check application logs
-
-**Issue: "CORS errors in browser"**
-
-- Update `CORS_ORIGINS` in backend
-- Ensure frontend URL matches exactly
-- Redeploy backend after CORS update
-
-**Issue: "Netlify function timeout"**
-
-- Increase backend timeout settings
-- Consider upgrading Render/Railway plan
-- Optimize VCF parsing logic
-
----
-
-## �🐛 Troubleshooting
+##  Troubleshooting
 
 ### Backend Issues
 
@@ -1228,103 +872,26 @@ npm run dev -- --port 3000
 
 ---
 
-## 🤝 Contributing
 
-We welcome contributions! Please follow these guidelines:
-
-### Steps to Contribute
-
-1. **Fork the Repository**
-
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/RIFT2026.git
-   ```
-
-2. **Create New Branch**
-
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Make Changes**
-   - Follow code style guidelines
-   - Add tests for new features
-   - Update documentation
-
-4. **Commit Changes**
-
-   ```bash
-   git commit -m "Add: description of changes"
-   ```
-
-5. **Push to Branch**
-
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-6. **Create Pull Request**
-   - Describe changes clearly
-   - Link related issues
-   - Request reviewers
-
-### Code Guidelines
-
-- Use meaningful variable names
-- Add docstrings to functions
-- Keep functions focused and small
-- Write tests for new functionality
-- Update README for new features
-
----
-
-## 📚 Documentation
+##  Documentation
 
 Comprehensive documentation is available:
 
 - **[SRS Report](./SRS_Report.md)** - Complete system specification (14 sections)
-- **[User Flow Diagrams](./USER_FLOW_DIAGRAM.md)** - Visual user workflows (10 diagrams)
-- **[LinkedIn Summary](./LINKEDIN_PROJECT_SUMMARY.md)** - Project overview
-- **[Documentation Index](./DOCUMENTATION_INDEX.md)** - All documentation guide
-- **[API Docs (Interactive)](http://localhost:8000/docs)** - Swagger UI when running
 
 ---
 
-## 📄 License
 
-This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.
+##  Support & Contact
 
-```
-MIT License
-
-Copyright (c) 2026 RIFT2026 Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
-```
+- **Phone: 9561508316
+- **Email: parthdheerajpatil@gmail.com
 
 ---
 
-## 📞 Support & Contact
+##  Acknowledgments
 
-- **GitHub Issues:** Report bugs and request features
-- **Documentation:** See SRS_Report.md for detailed specifications
-- **Questions:** Check Troubleshooting section
+- Enjoyed working with Nisarg, Sarthak and Ojas
+- Thank You, RIFT 2026 for providing such a wonderful and wholesome experience.
 
----
 
-## 🌟 Acknowledgments
-
-- Built with ❤️ using modern full-stack technologies
-- Pharmacogenomics data sourced from clinical guidelines
-- AI explanations powered by Google Gemini API
-
----
-
-**Version:** 1.0.0  
-**Last Updated:** February 2026  
-**Status:** Active Development  
-**Repository:** https://github.com/Nisarg2615/RIFT2026
