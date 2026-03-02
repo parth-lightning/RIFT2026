@@ -53,6 +53,7 @@ app.include_router(analyze_router)
 
 # ── Health check ─────────────────────────────────────────────────────────
 
+
 @app.get("/api/health", tags=["infra"])
 async def health():
     """Liveness probe + configuration summary."""
